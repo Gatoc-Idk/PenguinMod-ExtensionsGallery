@@ -1,19 +1,26 @@
 <script>
-    import { page } from '$app/stores';
+    import { page } from "$app/state";
 
+    // Components
     import NavigationBar from "$lib/NavigationBar/Component.svelte";
-    import { searchQuery } from '$lib/stores.js';
+    
+    import stateApplication from '$lib/state/app.svelte.js';
+    import stateSearchBar from '$lib/state/searchBar.svelte.js';
 
-    const onSearch = (event) => {
-        const query = event.detail;
-        $searchQuery = query;
+    let props = $props();
+    const onSearch = (query) => {
+        stateSearchBar.query = query;
     };
+
+    $effect(() => {
+        stateApplication.fromEditor = String(page.url.searchParams.get("editor")) === "true";
+    });
 </script>
 
 <NavigationBar
-    displaySearchBar={$page.url.pathname === '/'}
-    on:search={onSearch}
+    displaySearchBar={page.url.pathname === '/'}
+    onsearch={onSearch}
 />
-<div style="height: 3rem;" />
+<div style="height: 3rem;"></div>
 
-<slot />
+{@render props.children?.()}

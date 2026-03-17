@@ -19,6 +19,12 @@ import PageNumberUtilities from "./NumberUtilities.md?raw";
 // PenguinAI
 import PagePenguinAI from "./PenguinAI.md?raw";
 
+// AuthPenguin
+import PageAuthPenguin from "./AuthPenguin.md?raw";
+
+// YeetYourFiles
+import PageYeetYourFiles from "./YeetYourFiles.md?raw";
+
 import PageMoreTypes from "./More-Types.md?raw";
 
 // Boxed Physics
@@ -29,6 +35,10 @@ import PaintUtils from "./PaintUtils.md?raw";
 
 // Resolution
 import Resolution from "./Resolution.md?raw";
+
+// Project Interfaces
+
+import ProjectInterfaces from "./ProjectInterfaces.md?raw";
 
 export default {
     // the key is the path to the docs page
@@ -49,6 +59,12 @@ export default {
     // PenguinAI
     "PenguinAI": PagePenguinAI,
 
+    // AuthPenguin
+    "AuthPenguin": PageAuthPenguin,
+
+    // YeetYourFiles
+    "YeetYourFiles": PageYeetYourFiles,
+
     "more-types": PageMoreTypes,
 
     // Boxed Physics
@@ -59,4 +75,7 @@ export default {
     
     // Resolution
     "Resolution": Resolution,
+
+    // Project Interfaces
+    "ProjectInterfaces": ProjectInterfaces
 };
